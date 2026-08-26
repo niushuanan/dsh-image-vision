@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "kind": "xiaozhuang-dsh-plugin-export",
+  "createdAt": "2026-08-26T11:46:43.512Z",
+  "sourceCommit": "49b1c5207b1556515752c6bf9e7902c1a5964ad9",
+  "plugins": [
+    {
+      "id": "vision",
+      "name": "图片理解",
+      "rows": [
+        {
+          "id": "vision-local",
+          "name": "@deepseek-ai/dsh-vision-local"
+        }
+      ],
+      "sources": [
+        {
+          "kind": "profile",
+          "path": "vision-local"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "payload/vision/profile/vision-local/lib/client.js",
+      "size": 6831,
+      "sha256": "446fbf043557ce5a47d3324357c639d4f70e619cac5e6a5b3148bc5c9c436838"
+    },
+    {
+      "path": "payload/vision/profile/vision-local/lib/index.js",
+      "size": 14985,
+      "sha256": "58071894fa2f8141f93f34f155305d05b5beef1e37a70927b9d30d1890fa27b7"
+    },
+    {
+      "path": "payload/vision/profile/vision-local/package.json",
+      "size": 509,
+      "sha256": "66004a47a8746f85743fedfba061b2a7ce21a05b2793f6764e24ef80bd979115"
+    },
+    {
+      "path": "support/image-vision/SKILL.md",
+      "size": 455,
+      "sha256": "f379e1186e62517bf2b06228828557af75095709cbe1dd3c8c82420f714dfcda"
+    },
+    {
+      "path": "support/image-vision/scripts/qwen_vision.py",
+      "size": 16622,
+      "sha256": "2903e04fe88230fc1ca7e30d5512b40d860483b43e7dbe5198987dbd6557782b"
+    }
+  ],
+  "excludes": [
+    "node_modules",
+    "Git metadata",
+    "tests",
+    "caches",
+    "credentials",
+    "sessions",
+    "conversation history",
+    "user settings"
+  ],
+  "repository": "https://github.com/niushuanan/dsh-image-vision",
+  "releaseTag": "xiaozhuang-v0.4.2",
+  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh"
+}
