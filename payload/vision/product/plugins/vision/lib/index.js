@@ -16,21 +16,18 @@
  */
 import { readFileSync, existsSync, writeFileSync } from 'node:fs'
 import { writeFile, mkdir } from 'node:fs/promises'
-import { homedir } from 'node:os'
-import { join } from 'node:path'
 import { defineTool } from '@deepseek-ai/dsh-tools'
 
 export const name = 'vision-local'
 
 export const inject = ['subprocess', 'tools', 'systemPrompt', 'skills', 'attachments', 'sessionPersistence']
 
-const HOME_DIR = homedir()
-const CWD = process.env.DSH_IMAGE_VISION_HOME?.trim() || join(HOME_DIR, '.zcode', 'skills', 'image-vision')
-const SCRIPT = process.env.DSH_IMAGE_VISION_SCRIPT?.trim() || join(CWD, 'scripts', 'qwen_vision.py')
-const UPLOAD_DIR = join(process.env.DSH_HOME?.trim() || join(HOME_DIR, '.dsh'), 'vision-uploads')
+const SCRIPT = '/Users/zhuanghongkai/.zcode/skills/image-vision/scripts/qwen_vision.py'
+const CWD = '/Users/zhuanghongkai/.zcode/skills/image-vision'
+const UPLOAD_DIR = '/Users/zhuanghongkai/.dsh/vision-uploads'
 const MAP_FILE = UPLOAD_DIR + '/attachment-map.json'
 // subprocess 服务的子进程环境是清洗过的：脚本用 expanduser('~') 找配置、用 PATH 找 curl，必须显式补上
-const CHILD_ENV = { HOME: HOME_DIR, PATH: process.env.PATH || '/usr/bin:/bin:/usr/local/bin:/opt/homebrew/bin' }
+const CHILD_ENV = { HOME: '/Users/zhuanghongkai', PATH: '/usr/bin:/bin:/usr/local/bin:/opt/homebrew/bin' }
 const MIME_EXT = {
   'image/png': 'png',
   'image/jpeg': 'jpg',

@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T11:46:43.512Z",
-  "sourceCommit": "49b1c5207b1556515752c6bf9e7902c1a5964ad9",
+  "createdAt": "2026-10-06T18:35:53.732129+00:00",
+  "sourceCommit": "efbbbc6a1977cf4559bf306221533eb16393664c",
+  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
+  "repository": "https://github.com/niushuanan/dsh-image-vision",
+  "targetHarness": "0.2.1-alpha.1",
+  "upgradeWorkflow": "https://github.com/oh-my-dsh/dsh-plugin-upgrade-skill/",
   "plugins": [
     {
       "id": "vision",
@@ -10,55 +14,88 @@
       "rows": [
         {
           "id": "vision-local",
-          "name": "@deepseek-ai/dsh-vision-local"
+          "name": "./lib/index.js"
         }
       ],
       "sources": [
         {
-          "kind": "profile",
-          "path": "vision-local"
+          "kind": "product",
+          "path": "plugins/vision"
         }
-      ]
+      ],
+      "version": "1.2.0"
     }
   ],
   "files": [
     {
-      "path": "payload/vision/profile/vision-local/lib/client.js",
+      "path": "payload/shared/deliverable-file-path.patch",
+      "size": 2379,
+      "sha256": "65120b70cad2e196a4bee54911eced508f45818dc7dac1f1d7fd4a9de1ff3c73"
+    },
+    {
+      "path": "payload/shared/native-plugin-loading.patch",
+      "size": 23851,
+      "sha256": "136f4832023c8422906bbd86ede896ecb26d066931abf59db6fe2d094d4f2325"
+    },
+    {
+      "path": "payload/shared/session-state-compatibility.patch",
+      "size": 19961,
+      "sha256": "58bc1b86e2a347d0e29477877f96190379b04dc07bb3f37bd7f0f37fc3a3fef2"
+    },
+    {
+      "path": "payload/shared/settings-and-ui-slots.patch",
+      "size": 73183,
+      "sha256": "ce217a393adba9a3c3d1692ea14868a7d8f3d4e936a3895c216ae1f7d136a176"
+    },
+    {
+      "path": "payload/vision/product/plugins/vision/cordis.patch.yml",
+      "size": 60,
+      "sha256": "8052b1356f3125eb10b4b5b1845707c7a7869bf00581b045fc088130d9225d1a"
+    },
+    {
+      "path": "payload/vision/product/plugins/vision/lib/client.js",
       "size": 6831,
       "sha256": "446fbf043557ce5a47d3324357c639d4f70e619cac5e6a5b3148bc5c9c436838"
     },
     {
-      "path": "payload/vision/profile/vision-local/lib/index.js",
-      "size": 14985,
-      "sha256": "58071894fa2f8141f93f34f155305d05b5beef1e37a70927b9d30d1890fa27b7"
+      "path": "payload/vision/product/plugins/vision/lib/index.js",
+      "size": 14790,
+      "sha256": "0ed56bb52ca7c4674e257c8b58a6431abe9b384e15c52f795e1a68e9dabf724b"
     },
     {
-      "path": "payload/vision/profile/vision-local/package.json",
-      "size": 509,
-      "sha256": "66004a47a8746f85743fedfba061b2a7ce21a05b2793f6764e24ef80bd979115"
+      "path": "payload/vision/product/plugins/vision/package.json",
+      "size": 787,
+      "sha256": "3b39ff2303194c02cc7f1234c7ec267a6275968bc1bdbb8dacc64e14b37c7c6a"
     },
     {
-      "path": "support/image-vision/SKILL.md",
-      "size": 455,
-      "sha256": "f379e1186e62517bf2b06228828557af75095709cbe1dd3c8c82420f714dfcda"
+      "path": "payload/vision/product/plugins/vision/scripts/build.mjs",
+      "size": 243,
+      "sha256": "9011bdbc4a3b54acb070bdd3f5a1cb86dfa2674054b303192efbd8a8fd0f768b"
     },
     {
-      "path": "support/image-vision/scripts/qwen_vision.py",
-      "size": 16622,
-      "sha256": "2903e04fe88230fc1ca7e30d5512b40d860483b43e7dbe5198987dbd6557782b"
+      "path": "payload/vision/product/plugins/vision/src/client.js",
+      "size": 6831,
+      "sha256": "446fbf043557ce5a47d3324357c639d4f70e619cac5e6a5b3148bc5c9c436838"
+    },
+    {
+      "path": "payload/vision/product/plugins/vision/src/index.js",
+      "size": 14790,
+      "sha256": "0ed56bb52ca7c4674e257c8b58a6431abe9b384e15c52f795e1a68e9dabf724b"
     }
+  ],
+  "compatibilityPatches": [
+    "payload/shared/native-plugin-loading.patch",
+    "payload/shared/settings-and-ui-slots.patch",
+    "payload/shared/session-state-compatibility.patch",
+    "payload/shared/deliverable-file-path.patch"
   ],
   "excludes": [
     "node_modules",
-    "Git metadata",
-    "tests",
-    "caches",
     "credentials",
     "sessions",
-    "conversation history",
-    "user settings"
-  ],
-  "repository": "https://github.com/niushuanan/dsh-image-vision",
-  "releaseTag": "xiaozhuang-v0.4.2",
-  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh"
+    "attachments",
+    "user settings",
+    "caches",
+    "test outputs"
+  ]
 }
